@@ -11,7 +11,7 @@ const fetchEmployees = async (): Promise<Employee[]> => {
     const response = await fetch('http://localhost:4567/employees');
     console.log(response.body)
     if (!response.ok) {
-        throw new Error('Failed to fetch employees');
+        throw new Error('Falha na busca');
     }
     return JSON.parse(JSON.stringify(await response.json()));
 };
@@ -30,7 +30,7 @@ interface Project {
 const fetchProjects = async (): Promise<Project[]> => {
     const response = await fetch('/projects');
     if (!response.ok) {
-        throw new Error('Failed to fetch projects');
+        throw new Error('Falha na busca');
     }
     return response.json();
 };
@@ -47,7 +47,7 @@ interface Task {
 const fetchTasks = async (): Promise<Task[]> => {
     const response = await fetch('http://localhost:4567/tasks');
     if (!response.ok) {
-        throw new Error('Failed to fetch tasks');
+        throw new Error('Falha na busca');
     }
     return JSON.parse(JSON.stringify(await response.json()))
         ;
@@ -67,7 +67,7 @@ interface Department {
 const fetchDepartments = async (): Promise<Department[]> => {
     const response = await fetch('http://localhost:4567/departments');
     if (!response.ok) {
-        throw new Error('Failed to fetch departments');
+        throw new Error('Falha na busca');
     }
     return JSON.parse(JSON.stringify(await response.json()));
 };
